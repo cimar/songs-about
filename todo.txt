@@ -1,0 +1,40 @@
+/*TO DO:
+
+	 1. Grab the content of the form (SEARCH_TERM), pass form submission to "SongList"
+
+	 2. Link up MusixMatch API, using my API key
+
+	 3. Get list of songs w/ SEARCH_TERM in them
+
+	 4. Truncate list (later, sort and filter)
+
+	 5. List songs in SongList
+
+	 6. Store list as a data structure of some sort
+
+	 7. Link up Spotify API, using my user creds?
+
+	 8. Display playlist
+
+	 9. Add Sort + Filter
+
+	 10. Write 'About' page
+
+"Songs About is the easiest way I know of to compile and listen to a lot of songs with a prominent lyric or phrase in common.
+
+Here are some reasons you might want to use Songs About:
+
+	*	You maybe have some narcissistic tendencies and want to hear your name over and over again in rhymed, musical verse.
+
+	*	You're making your [significant-other,niece,secret-santa-victim] a novelty mixtape.
+
+	*	You're throwing a [cheese,cats,Marxism]-themed party
+
+	*	You are merely curious to hear what songs most prominently feature [cheese,cats,Marxism].
+
+I am Rosie Cima, a journalist, photographer, and singer-songwriter living in San Francisco. I was inspired to build this website because when I was in middle school the only song I knew with my name in it was AC/DC's 'Whole Lotta Rosie' which is a great song but probably exacerbated some pre-teen image issues. I built this website using React, the Spotify and MusixMatch APIs, and my famous can-do attitude.
+
+Shameless plug: if you are looking for the best song about 'Pablo' look no further than my bandcamp page. I also have you covered for songs about songs about cocaine.
+
+*/
+

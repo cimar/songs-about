@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Songs About X</title>
+    <!-- Not present in the tutorial. Just for basic styling. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="https://unpkg.com/react@15.3.0/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <div><a href="/about">About</a></div>
+    <script type="text/babel">
+	var placeholder_examples = [
+		"Pablo...", "Utah...", "Marxism...", "cheese...", "cocaine..."
+	];
+	var SearchBox = React.createClass({
+		render: function() {
+			return (
+				<div className="searchBox">
+					<h1>Songs About...</h1>
+					<SearchForm />
+					<SongList />
+					<hr />
+				</div>
+			);
+		}
+	});
+
+	var SongList = React.createClass({
+		render: function() {
+			return (
+				<div>
+				<span>Hello world! The list of songs about </span><span> will go here.</span>
+				</div>
+			)
+		}
+	});
+
+	var SearchForm = React.createClass({
+		render: function() {
+			return (
+				<form className="searchForm">
+					<span>I want songs with </span>
+					<input type="text" placeholder="Pablo" />
+					<span> in them. </span> 
+					<input type="submit" value="Please!" />
+				</form>
+			);
+		}
+	});
+
+
+	ReactDOM.render(
+		<SearchBox />,
+		document.getElementById('content')
+	);
+    </script>
+  </body>
+</html>
