@@ -19,12 +19,19 @@
 		"Pablo...", "Utah...", "Marxism...", "cheese...", "cocaine..."
 	];
 	var SearchBox = React.createClass({
+
+		getInitialState: function() {
+			return {
+				searchkey: 'potatoes'
+			};
+		},
+
 		render: function() {
 			return (
 				<div className="searchBox">
 					<h1>Songs About...</h1>
 					<SearchForm />
-					<SongList />
+					<SongList searchkey={this.state.searchkey} />
 					<hr />
 				</div>
 			);
@@ -33,9 +40,10 @@
 
 	var SongList = React.createClass({
 		render: function() {
+			var songTheme = this.props.searchkey;
 			return (
 				<div>
-				<span>Hello world! The list of songs about </span><span> will go here.</span>
+				<span>Hello world! The list of songs about </span><b>{songTheme}</b><span> will go here.</span>
 				</div>
 			)
 		}
