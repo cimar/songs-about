@@ -18,25 +18,6 @@
 	var placeholder_examples = [
 		"Pablo...", "Utah...", "Marxism...", "cheese...", "cocaine..."
 	];
-	var SearchBox = React.createClass({
-
-		getInitialState: function() {
-			return {
-				searchkey: 'potatoes'
-			};
-		},
-
-		render: function() {
-			return (
-				<div className="searchBox">
-					<h1>Songs About...</h1>
-					<SearchForm />
-					<SongList searchkey={this.state.searchkey} />
-					<hr />
-				</div>
-			);
-		}
-	});
 
 	var SongList = React.createClass({
 		render: function() {
@@ -50,14 +31,45 @@
 	});
 
 	var SearchForm = React.createClass({
+		handleSubmit: function(e) {
+			e.preventDefault();
+			this.props.onUserInput(this.refs.searchfield.value);
+		},
 		render: function() {
 			return (
-				<form className="searchForm">
+				<form className="searchForm" onSubmit={this.handleSubmit}>
 					<span>I want songs with </span>
-					<input type="text" placeholder="Pablo" />
+					<input 
+						type="text"
+						placeholder="Pablo"
+						ref="searchfield"
+					/>
 					<span> in them. </span> 
 					<input type="submit" value="Please!" />
 				</form>
+			);
+		}
+	});
+
+	var SearchBox = React.createClass({
+		getInitialState: function() {
+			return {
+				searchkey: ''
+			};
+		},
+		handleUserInput: function(searchkey) {
+			this.setState({
+				searchkey: searchkey,
+			});
+		},
+		render: function() {
+			return (
+				<div className="searchBox">
+					<h1>Songs About...</h1>
+					<SearchForm onUserInput={this.handleUserInput} />
+					<SongList searchkey={this.state.searchkey} />
+					<hr />
+				</div>
 			);
 		}
 	});
